@@ -10,18 +10,18 @@ import java.util.Map;
 @Repository
 public class OrderRepository
 {
-    private Map<String, Order> orderDB; // orderID , Order obj
-    private Map<String, DeliveryPartner> DeliveryPartnerDB; // partnerID, partner obj
+    Map<String, Order> orderDB = new HashMap<>(); // orderID , Order obj
+    Map<String, DeliveryPartner> DeliveryPartnerDB = new HashMap<>(); // partnerID, partner obj
 
-    private Map<String, String> orderPartnerDB; // orderID , partnerID
-    private Map<String, List<String>> partnerAndOrderDB; // partnerID, list of assingned ordersIds to him
+    Map<String, String> orderPartnerDB = new HashMap<>(); // orderID , partnerID
+    Map<String, List<String>> partnerAndOrderDB = new HashMap<>(); // partnerID, list of assingned ordersIds to him
 
-    public OrderRepository() {
-        this.orderDB = new HashMap<>();
-        this.DeliveryPartnerDB = new HashMap<>();
-        this.orderPartnerDB = new HashMap<>();
-        this.partnerAndOrderDB = new HashMap<>();
-    }
+//    public OrderRepository() {
+//        this.orderDB = new HashMap<>();
+//        this.DeliveryPartnerDB = new HashMap<>();
+//        this.orderPartnerDB = new HashMap<>();
+//        this.partnerAndOrderDB = new HashMap<>();
+//    }
 
     public void addOrder(Order order)
     {
