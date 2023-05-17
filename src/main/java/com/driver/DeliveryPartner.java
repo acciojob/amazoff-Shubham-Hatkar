@@ -4,21 +4,25 @@ public class DeliveryPartner {
 
     private String id;
     private int numberOfOrders;
+    public DeliveryPartner(){};
 
-    public DeliveryPartner(String id) {
+    public DeliveryPartner(String id, int i) {
         this.id = id;
         this.numberOfOrders = 0;
     }
 
-    public String getId() {
+    public String getId()
+    {
         return id;
     }
 
-    public Integer getNumberOfOrders(){
+    public Integer getNumberOfOrders()
+    {
         return numberOfOrders;
     }
 
-    public void setNumberOfOrders(Integer numberOfOrders) {
+    public void setNumberOfOrders(Integer numberOfOrders)
+    {
         this.numberOfOrders = numberOfOrders;
     }
 }
