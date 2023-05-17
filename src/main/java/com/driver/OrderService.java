@@ -62,10 +62,11 @@ public class OrderService
 
     public Integer getOrdersLeftAfterGivenTimeByPartnerId(String time, String partnerId)
     {
-        int deliveryTime = (Integer.valueOf(time.substring(0,3)) * 60) +
-                Integer.valueOf(time.substring(3));
+        String timeArr[] = time.split(":");
+        int currTime = (Integer.valueOf(timeArr[0]) * 60) +
+                Integer.valueOf(timeArr[1]);
 
-        return orderRepository.getOrdersLeftAfterGivenTimeByPartnerId(deliveryTime,partnerId);
+        return orderRepository.getOrdersLeftAfterGivenTimeByPartnerId(currTime,partnerId);
     }
 
     public String getLastDeliveryTimeByPartnerId(String partnerId)
