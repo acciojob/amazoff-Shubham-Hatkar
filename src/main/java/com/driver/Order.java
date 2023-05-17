@@ -20,7 +20,7 @@ public class Order {
         //deliveryTime  = HH*60 + MM
         this.id = id;
         this.deliveryTime = (Integer.valueOf(deliveryTime.substring(0,3)) * 60) +
-                Integer.valueOf(deliveryTime.substring(4));
+                Integer.valueOf(deliveryTime.substring(3));
     }
 
     public String getId()
