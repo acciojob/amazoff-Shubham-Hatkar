@@ -20,8 +20,9 @@ public class Order {
         //deliveryTime  = HH*60 + MM
         this.id = id;
         String time[] = deliveryTime.split(":");
-        this.deliveryTime = (Integer.valueOf(time[0]) * 60) +
-                Integer.valueOf(time[1]);
+        int HH = Integer.valueOf(time[0]);
+        int MM = Integer.valueOf(time[1]);
+        this.deliveryTime = (HH * 60) + MM;
     }
 
     public String getId()

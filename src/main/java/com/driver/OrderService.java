@@ -10,7 +10,7 @@ import java.util.List;
 public class OrderService
 {
     @Autowired
-    OrderRepository orderRepository;
+    OrderRepository orderRepository = new OrderRepository();
 
     public void addOrder(Order order)
     {
@@ -60,11 +60,12 @@ public class OrderService
         return totalOrders - assignedOrder;
     }
 
-    public Integer getOrdersLeftAfterGivenTimeByPartnerId(String time, String partnerId)
+    public Integer getOrdersLeftAfterGivenTimeByPartnerId(String t, String partnerId)
     {
-        String timeArr[] = time.split(":");
-        int currTime = (Integer.valueOf(timeArr[0]) * 60) +
-                Integer.valueOf(timeArr[1]);
+        String time[] = t.split(":");
+        int HH = Integer.valueOf(time[0]);
+        int MM = Integer.valueOf(time[1]);
+        int currTime = (HH * 60) + MM;
 
         return orderRepository.getOrdersLeftAfterGivenTimeByPartnerId(currTime,partnerId);
     }
