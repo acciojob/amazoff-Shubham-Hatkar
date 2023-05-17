@@ -16,6 +16,7 @@ public class OrderRepository
     Map<String, String> orderPartnerDB = new HashMap<>(); // orderID , partnerID
     Map<String, List<String>> partnerAndOrderDB = new HashMap<>(); // partnerID, list of assingned ordersIds to him
 
+    public OrderRepository(){};
 //    public OrderRepository() {
 //        this.orderDB = new HashMap<>();
 //        this.DeliveryPartnerDB = new HashMap<>();
