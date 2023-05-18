@@ -16,6 +16,10 @@ public class OrderRepository
     Map<String, String> orderPartnerDB = new HashMap<>(); // orderID , partnerID
     Map<String, List<String>> partnerAndOrderDB = new HashMap<>(); // partnerID, list of assingned ordersIds to him
 
+    public OrderRepository()
+    {
+
+    }
 //    public OrderRepository() {
 //        this.orderDB = new HashMap<>();
 //        this.DeliveryPartnerDB = new HashMap<>();
@@ -126,10 +130,12 @@ public class OrderRepository
 
     public void deleteOrderById(String orderId)
     {
-        orderDB.remove(orderId);
+        if(orderDB.containsKey(orderId))
+            orderDB.remove(orderId);
 
         String partnerID = orderPartnerDB.get(orderId);
-        orderPartnerDB.remove(partnerID);
+        if(orderPartnerDB.containsKey(partnerID))
+            orderPartnerDB.remove(partnerID);
 
         List<String> list = partnerAndOrderDB.get(partnerID);
         list.remove(orderId);
